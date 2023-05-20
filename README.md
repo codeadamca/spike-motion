@@ -2,6 +2,47 @@
 
 A Python snippet utilizing the LEGO Spike motion sensor, [MicroPython](https://lego.github.io/MINDSTORMS-Robot-Inventor-hub-API/), and the `get_roll_angle()` and `get_gesture()` commands.
 
+## Sample Code
+
+```py
+from mindstorms import MSHub
+
+hub = MSHub()
+
+while True:
+
+    roll = hub.motion_sensor.get_roll_angle()
+    
+    if roll > 45:
+
+        pixels = '00009:00009:00009:00009:00009'
+
+    elif roll > 10: 
+
+        pixels = '00090:00090:00090:00090:00090'
+
+    elif roll < -45:
+
+        pixels = '90000:90000:90000:90000:90000'
+
+    elif roll < -10:
+
+        pixels = '09000:09000:09000:09000:09000'
+
+    else:
+
+        pixels = '00900:00900:00900:00900:00900'
+    
+    hub.light_matrix.show(pixels)
+
+    if hub.left_button.is_pressed() and hub.right_button.is_pressed():
+
+        break
+
+
+hub.speaker.beep()
+```
+
 ***
 
 ## Repo Resources
