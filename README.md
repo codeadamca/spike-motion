@@ -1,4 +1,4 @@
-# LEGO Spike Hub and the Motion Sensor
+# LEGO® Spike Hub and the Motion Sensor
 
 A Python snippet utilizing the LEGO Spike motion sensor, [MicroPython](https://lego.github.io/MINDSTORMS-Robot-Inventor-hub-API/), and the `get_roll_angle()` and `get_gesture()` commands.
 
